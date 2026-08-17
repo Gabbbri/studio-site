@@ -1,7 +1,8 @@
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { extname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const outputDirectory = new URL('../dist/', import.meta.url);
+const outputDirectory = fileURLToPath(new URL('../dist/', import.meta.url));
 const repositoryBase = '/studio-site';
 
 async function visit(directory) {
