@@ -3,7 +3,9 @@ interface Props { kind?: string; name: string; sector: string; tone: 'blue'|'for
 const { kind='Concept', name, sector, tone, number } = Astro.props;
 ---
 <article class={`demo-frame demo-${tone}`}>
-  <div class="demo-top"><span>{kind}</span>{number && <b>{number}</b>}</div>
-  <div class="demo-browser"><i></i><i></i><i></i><small>{sector}</small><strong>{name}</strong><em>Esplora il progetto ↗</em></div>
+  <div class="demo-visual">
+    <div class="demo-top"><span>{kind}</span>{number && <b>{number}</b>}</div>
+    <div class="demo-browser"><div class="browser-dots"><i></i><i></i><i></i></div><small>{sector}</small><strong>{name}</strong><em>Esplora il progetto ↗</em></div>
+  </div>
   <footer><h3>{name}</h3><p>{sector}</p><b>↗</b></footer>
 </article>
