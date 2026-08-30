@@ -1,12 +1,14 @@
 ---
 import DemoFrame from './DemoFrame.astro';
+interface Props { refined?: boolean }
+const { refined = false } = Astro.props;
 const demos = [
   { kind:'Progetto reale', name:'Appartamenti Tiziana', sector:'Ospitalità · Val di Sole', tone:'blue' as const },
   { kind:'Concept', name:'Selva', sector:'B&B · Dolomiti', tone:'forest' as const },
   { kind:'Concept', name:'Materia', sector:'Artigiani · Trentino', tone:'sand' as const },
 ];
 ---
-<div class="studio-home">
+<div class:list={['studio-home', { refined }]}>
   <section class="hero" id="top">
     <nav class="nav"><a class="logo" href="#top">studio.</a><div class="nav-links"><a href="#showroom">Progetti</a><a href="#processo">Come funziona</a><a href="#gestione">Gestione</a></div><a class="nav-cta" href="#contatti">Parliamo del tuo sito <span>↗</span></a></nav>
     <div class="hero-pattern" aria-hidden="true">PIÙ SEMPLICE · PIÙ CHIARO</div>
