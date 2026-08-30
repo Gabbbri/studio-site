@@ -1,15 +1,7 @@
 ---
-import DemoFrame from './DemoFrame.astro';
 import ProjectCard from './ProjectCard.astro';
-interface Props { refined?: boolean; projectCards?: boolean }
-const { refined = false, projectCards = false } = Astro.props;
-const demos = [
-  { kind:'Progetto reale', name:'Appartamenti Tiziana', sector:'Ospitalità · Val di Sole', tone:'blue' as const },
-  { kind:'Concept', name:'Selva', sector:'B&B · Dolomiti', tone:'forest' as const },
-  { kind:'Concept', name:'Materia', sector:'Artigiani · Trentino', tone:'sand' as const },
-];
 ---
-<div class:list={['studio-home', { refined, 'project-cards-version': projectCards }]}>
+<div class="studio-home refined project-cards-version">
   <section class="hero" id="top">
     <nav class="nav"><a class="logo" href="#top">studio.</a><div class="nav-links"><a href="#showroom">Progetti</a><a href="#processo">Come funziona</a><a href="#gestione">Gestione</a></div><a class="nav-cta" href="#contatti">Parliamo del tuo sito <span>↗</span></a></nav>
     <div class="hero-pattern" aria-hidden="true">PIÙ SEMPLICE · PIÙ CHIARO</div>
@@ -20,7 +12,7 @@ const demos = [
 
   <section class="intro" id="processo"><p class="section-label">Un sito senza diventare project manager</p><h2>Tu conosci il tuo lavoro.<br/><em>Noi sappiamo come portarlo online.</em></h2><div class="intro-grid"><p>Non devi imparare termini tecnici, scegliere strumenti o arrivare con tutto già pronto. Mettiamo ordine nelle informazioni, ti mostriamo presto una direzione concreta e costruiamo il progetto insieme.</p><ol><li><b>01</b><span><strong>Ci racconti</strong>Attività, clienti e obiettivi.</span></li><li><b>02</b><span><strong>Ti mostriamo</strong>Una proposta da vedere e discutere.</span></li><li><b>03</b><span><strong>Costruiamo</strong>Contenuti, design e sviluppo.</span></li><li><b>04</b><span><strong>Andiamo online</strong>Pubblicazione, SEO e supporto.</span></li></ol></div></section>
 
-  <section class="showroom" id="showroom"><header><div><p class="section-label">Progetti reali e concept navigabili</p><h2>Prima guarda.<br/><em>Poi parliamo.</em></h2></div><p>Non devi fidarti soltanto di una promessa. L'archivio progetti serve a valutare davvero qualità, varietà e livello di cura prima ancora di contattarci.</p></header>{projectCards ? <div class="projects-grid"><ProjectCard kind="Progetto reale" name="Appartamenti Tiziana" sector="Ospitalità" location="Val di Sole" year="2026" tone="blue" number="01 / 03"/><ProjectCard kind="Concept" name="Selva" sector="B&B" location="Dolomiti" year="2026" tone="forest" number="02 / 03"/><ProjectCard kind="Concept" name="Materia" sector="Artigiani" location="Trentino" year="2026" tone="sand" number="03 / 03"/><a class="archive-card" href="#"><div><span>Archivio</span><b>04</b></div><div class="archive-graphic"><i></i><i></i><i></i><strong>ALL<br/>WORK</strong></div><footer><p>3 progetti · nuovi concept in arrivo</p><div><h3>Archivio progetti</h3><span>↗</span></div></footer></a></div> : <><div class="showroom-grid"><DemoFrame {...demos[0]} number="01 / 03"/><DemoFrame {...demos[1]} number="02 / 03"/><DemoFrame {...demos[2]} number="03 / 03"/></div><a class="showroom-link" href="#"><span>Esplora lo showroom completo</span><b>↗</b></a></>}</section>
+  <section class="showroom" id="showroom"><header><div><p class="section-label">Progetti reali e concept navigabili</p><h2>Prima guarda.<br/><em>Poi parliamo.</em></h2></div><p>Non devi fidarti soltanto di una promessa. L'archivio progetti serve a valutare davvero qualità, varietà e livello di cura prima ancora di contattarci.</p></header><div class="projects-grid"><ProjectCard kind="Progetto reale" name="Appartamenti Tiziana" sector="Ospitalità" location="Val di Sole" year="2026" tone="blue" number="01 / 03"/><ProjectCard kind="Concept" name="Selva" sector="B&B" location="Dolomiti" year="2026" tone="forest" number="02 / 03"/><ProjectCard kind="Concept" name="Materia" sector="Artigiani" location="Trentino" year="2026" tone="sand" number="03 / 03"/><a class="archive-card" href="#"><div><span>Archivio</span><b>04</b></div><div class="archive-graphic"><i></i><i></i><i></i><strong>ALL<br/>WORK</strong></div><footer><p>3 progetti · nuovi concept in arrivo</p><div><h3>Archivio progetti</h3><span>↗</span></div></footer></a></div></section>
 
   <section class="offer"><p class="section-label">Un progetto completo</p><h2>Tutto ciò che serve.<br/>Niente pezzi mancanti.</h2><div class="offer-grid"><article><b>01</b><h3>Strategia e struttura</h3><p>Obiettivi, pubblico, pagine e percorso del cliente.</p></article><article><b>02</b><h3>Testi e materiali</h3><p>Informazioni organizzate e supporto nella raccolta dei contenuti.</p></article><article><b>03</b><h3>Design e sviluppo</h3><p>Identità su misura, versione mobile, velocità e codice pulito.</p></article><article><b>04</b><h3>Visibilità e lancio</h3><p>SEO tecnica, dominio, pubblicazione e controlli finali.</p></article></div></section>
 
