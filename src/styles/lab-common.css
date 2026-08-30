@@ -1,0 +1,9 @@
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+a { color: inherit; text-decoration: none; }
+.lab-switcher { position: fixed; z-index: 1000; left: 50%; bottom: 14px; transform: translateX(-50%); display: flex; align-items: center; gap: 5px; padding: 6px; border: 1px solid #ffffff24; border-radius: 999px; color: #fff; background: #111d; box-shadow: 0 14px 45px #0005; backdrop-filter: blur(12px); font: 11px/1 Arial, sans-serif; }
+.lab-switcher > span { padding: 0 10px; color: #aaa; letter-spacing: .12em; text-transform: uppercase; }
+.lab-switcher a { display: grid; width: 32px; height: 32px; place-items: center; border-radius: 50%; }
+.lab-switcher a.active { color: #111; background: #fff; }
+@media (max-width: 680px) { .lab-switcher { bottom: 8px; } }
