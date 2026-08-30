@@ -1,0 +1,8 @@
+---
+interface Props { active: 1 | 2 | 3 | 4 | 5 }
+const { active } = Astro.props;
+---
+<aside class="explore-switcher" aria-label="Esplorazioni homepage">
+  <span>Explore</span>
+  {[1,2,3,4,5].map((item)=><a class:list={{active:item===active}} href={`../${item}/`}>{item}</a>)}
+</aside>
