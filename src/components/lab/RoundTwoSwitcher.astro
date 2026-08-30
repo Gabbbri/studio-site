@@ -1,0 +1,11 @@
+---
+interface Props { active: 1 | 2 | 3 | 4 }
+const { active } = Astro.props;
+---
+<aside class="round-switcher" aria-label="Seconda iterazione">
+  <span>Mix 02</span>
+  {[1, 2, 3, 4].map((item) => <a class:list={{ active: active === item }} href={`../${item}/`}>{item}</a>)}
+  <i></i>
+  <a href="../../b/" title="Aton originale">A</a>
+  <a href="../../c/" title="Incisor originale">I</a>
+</aside>
