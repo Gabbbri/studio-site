@@ -1,0 +1,24 @@
+---
+interface Props {
+  kind: 'Concept' | 'Progetto reale';
+  name: string;
+  sector: string;
+  location: string;
+  year: string;
+  tone: 'blue' | 'forest' | 'sand';
+  number: string;
+}
+const { kind, name, sector, location, year, tone, number } = Astro.props;
+---
+<article class={`project-card project-${tone}`}>
+  <div class="project-card-top"><span>{kind}</span><b>{number}</b></div>
+  <div class="project-preview">
+    <div class="preview-page">
+      <div class="preview-nav"><i></i><i></i><i></i><span>{name.toLowerCase().replaceAll(' ', '')}.it</span></div>
+      <small>{sector} · {location}</small>
+      <strong>{name}</strong>
+      <em>Scopri il progetto</em>
+    </div>
+  </div>
+  <div class="project-meta"><p>{sector} · {location} · {year}</p><div><h3>{name}</h3><span>↗</span></div></div>
+</article>
